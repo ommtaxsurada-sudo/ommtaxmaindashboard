@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kalyani Mushroom (prop. Mr. Simanchal Patri)Accounting Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f0f2f5;
+}
+
+.header{
+    background:#1565C0;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    background:#1565C0;
+    color:white;
+}
+
+.card h2{
+    margin:10px 0;
+}
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:gray;
+}
+</style>
+
+</head>
+
+<body>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBOw2CG4-8JWYNl5hf3aR7yCPjcPI41IC0",
+  authDomain: "ommtaxsolutions.firebaseapp.com",
+  projectId: "ommtaxsolutions",
+  storageBucket: "ommtaxsolutions.firebasestorage.app",
+  messagingSenderId: "944702919466",
+  appId: "1:944702919466:web:6f37b36e1d5cf6d7a54453",
+  measurementId: "G-NNTHM5Y4B8"
+
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location = "https://ommtax.github.io/kalyanilogin/";
+    }
+});
+
+window.logout = function () {
+    signOut(auth).then(() => {
+        window.location = "https://ommtax.github.io/kalyanilogin/";
+    });
+}
+
+</script>
+
+<div class="header">
+OMM TAX SOLUTIONS ,SURADA,GANJAM
+</div>
+
+<div style="text-align:right;padding:15px;">
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxpaymentpaid/'">
+<h2>💰Supplier Payment</h2>
+<p>Supplier Payment Entry</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxpaymentreceived/'">
+<h2>🧾 Receipt</h2>
+<p>Receipt Entry</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxclients/'">
+<h2>👤 Buyer</h2>
+<p>Add Buyer</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxsupplier/'">
+<h2>👤 Suppliers</h2>
+<p>Add Supplier</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxservicepaid/'">
+<h2>📈 Sales</h2>
+<p>Sales Entry</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxpurchase/'">
+<h2>🛒 Purchase</h2>
+<p>Purchase Entry</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/ommtaxreports/'">
+<h2>📊 Reports</h2>
+<p>View Reports</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/buyeroutstandingledger/'">
+    <h2>📋 Buyer Outstanding </h2>
+    <p>Buyer Outstanding Ledger Wise</p>
+</div>
+
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/allbuyeroutstandingreport/'">
+    <h2>📋 Buyer Outstanding All Ledger</h2>
+    <p>Buyer Outstanding All Ledger</p>
+</div>
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/supplieroutstandingledgerday/'">
+    <h2>📋 Supplier Outstanding </h2>
+    <p>Supplier Outstanding Ledger Wise</p>
+</div>
+
+
+<div class="card" onclick="location.href='https://ommtaxsurada-sudo.github.io/allsupplieroustanding/'">
+    <h2>📋 Supplier Outstanding All Ledger</h2>
+    <p>Supplier Outstanding All Ledger</p>
+</div>
+    
+</div>
+
+<div class="footer">
+© 2026 Accounting Management System
+</div>
+
+</body>
+</html>
